@@ -12,6 +12,7 @@ def get_all_queries():
         'tagged': 'python',
         'site': 'stackoverflow'
     }
+
     req = requests.get('https://api.stackexchange.com/2.3/questions', params).json()
     for i in req['items']:
         result = i['title']
