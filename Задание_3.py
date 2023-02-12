@@ -13,8 +13,9 @@ def get_all_queries():
         'site': 'stackoverflow'
     }
     req = requests.get('https://api.stackexchange.com/2.3/questions', params).json()
-    req = req['items']['title']
-    return pprint(req)
+    for i in req['items']:
+        result = i['title']
+    return pprint(result)
 
 
 get_all_queries()
